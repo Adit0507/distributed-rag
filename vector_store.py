@@ -32,7 +32,9 @@ def upsert_chunks(chunks, vectors, collection_name=COLLECTION_NAME):
 
 def search(query_vector, top_k =5,collection_name=COLLECTION_NAME):
     client =_get_client()
-    hits =client.search(collection_name=collection_name, query_vector=query_vector, limit=top_k)
+    response =client.query_points(collection_name=collection_name, query=query_vector, limit=top_k)
+    hits =response.points
+    
     return [
         {
             "chunk_id": hit.id,
