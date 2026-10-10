@@ -1,0 +1,100 @@
+How does Raft handle leader election?
+What is the difference between MapReduce's map and reduce phases?
+How does Dynamo achieve eventual consistency?
+What is a quorum in distributed consensus?
+How does Raft ensure log replication consistency across nodes?
+What is a vector clock and how does Dynamo use it?
+How does MapReduce handle a worker node failing mid-job?
+What are the tradeoffs between strong and eventual consistency?
+How does Raft differ from Paxos?
+What is a Merkle tree and how does Dynamo use it for anti-entropy?
+How does sloppy quorum work in Dynamo?
+What triggers a new election term in Raft?
+How is data partitioned across nodes in Dynamo?
+What is the role of the combiner function in MapReduce?
+How does log compaction work in Raft?
+What is the role of the master in GFS?
+How does GFS handle chunkserver failures?
+Why does GFS use a 64 MB chunk size?
+How does GFS maintain consistency for concurrent record appends?
+chunk lease primary replica
+How does the GFS master keep file metadata in memory and what are the tradeoffs?
+What is the operation log in GFS and how is it used for recovery?
+How does GFS place replicas across racks?
+What is the difference between a defined and a consistent file region in GFS?
+How does a GFS client read a file?
+How does data flow when a client writes to a chunk in GFS?
+atomic record append
+How does GFS garbage collect deleted files?
+How does the GFS master detect stale chunk replicas?
+How does GFS use checksums to detect data corruption?
+How do snapshots work in GFS with copy-on-write?
+How does GFS lock the namespace for concurrent operations?
+Why did GFS choose a single master design?
+What workload assumptions drove the design of GFS?
+How does GFS re-replicate chunks when the number of copies drops too low?
+shadow masters read-only access
+When a storage server holding file data dies, how does the system restore the number of copies?
+What is a term in Raft and how does it detect stale leaders?
+How does Raft use randomized election timeouts?
+AppendEntries RPC
+How does Raft repair a follower whose log diverges from the leader's?
+When is a log entry considered committed in Raft?
+How does the election restriction guarantee a new leader has all committed entries?
+Why can't a Raft leader commit entries from previous terms by counting replicas?
+How does Raft handle cluster membership changes?
+joint consensus
+How do snapshots work in Raft and what does InstallSnapshot do?
+Leader Completeness property
+What happens in Raft when the network is partitioned?
+How do Raft clients find the leader and avoid executing a command twice?
+What is the State Machine Safety property in Raft?
+What are the roles of proposers, acceptors, and learners in Paxos?
+What happens in the prepare phase of Paxos?
+What happens in the accept phase of the Paxos algorithm?
+How does Paxos choose a single value despite failures?
+What requirement must a proposer satisfy when issuing a proposal in Paxos?
+Why are proposal numbers unique and totally ordered in Paxos?
+Why can two competing proposers stop each other from making progress in Paxos?
+distinguished proposer liveness
+How do learners find out which value has been chosen in Paxos?
+How does Paxos implement a replicated state machine?
+How does the leader work across multiple instances of Paxos?
+How many acceptors does Paxos need to tolerate F failures?
+promise an acceptor makes after a prepare request
+How does an acceptor treat a proposal numbered lower than one it already responded to?
+How does the MapReduce master assign tasks to workers?
+What is a straggler and how do backup tasks mitigate it?
+How does MapReduce partition intermediate keys among reduce tasks?
+Where is intermediate data stored between the map and reduce phases?
+How does MapReduce exploit data locality?
+What happens if the MapReduce master fails?
+How does MapReduce keep output deterministic when tasks are re-executed?
+skipping bad records
+How does MapReduce commit task output atomically?
+What is the word count example in MapReduce?
+partitioning function hash(key) mod R
+How does MapReduce decide the number of map and reduce tasks?
+In what order are intermediate keys processed within a partition?
+How is the inverted index built with MapReduce?
+How does Dynamo use consistent hashing to place data on nodes?
+What are virtual nodes in Dynamo and why are they used?
+N R W quorum configuration
+How does Dynamo resolve conflicting versions when reading?
+hinted handoff
+How do Dynamo nodes detect failures using gossip?
+What is a preference list in Dynamo?
+How does the coordinator handle a put request in Dynamo?
+How does Dynamo recover from permanent node failures?
+Why does Dynamo favor availability over consistency for writes?
+How is the shopping cart conflict reconciled in Dynamo?
+How does Dynamo propagate ring membership changes?
+syntactic reconciliation versus semantic reconciliation
+How does Dynamo meet its 99.9th percentile latency target?
+How do Raft and Dynamo each respond when a node fails?
+Which of these systems provide strong consistency and which provide eventual consistency?
+How does leader-based replication differ from leaderless replication?
+How do GFS and MapReduce work together in Google's infrastructure?
+Which systems use quorums to decide when an operation succeeds?
+How do heartbeats help detect failures across these systems?
+What techniques do these systems use to tolerate machine failures through replication?
